@@ -1,14 +1,14 @@
 # Run promotions and discounts for Black Friday and Cyber Monday
 
-Black Friday and Cyber Monday discounts offer special deals during promotions to attract new customers and boost sales. They are limited-time discounts, typically valid for a short period, and can apply to specific products or all items in your catalog. Paddle offers several options to fully customize discounts on your products.
+Black Friday and Cyber Monday discounts offer special deals to attract new customers and boost sales. These limited-time discounts are typically valid for a short period and can apply to specific products or all items in your catalog. Paddle provides several options to fully customize discounts on your products.
 
 To start:
 
 **Log in** to Paddle Dashboard
 Start by logging into your Paddle Dashboard. If you do not have a Paddle account, [sign up](https://login.paddle.com/signup "sign up") and complete the initial setup.
 
-**Navigate** to Discounts
-In the Paddle Dashboard, navigate to the **Discounts** section under the **Catalog** option.
+**Navigate** to **Discounts**
+In the Paddle Dashboard, navigate to the **Discounts** section under the **Catalog** option in the sidebar.
 
 ### Create a New Discount
 To create a new discount, select **+ New Discount**
@@ -21,15 +21,15 @@ There are three discount type options available:
 - Amount: Fill out the amount details and select the currency.
 - Amount per unit: Fill out the amount details and select the currency.   Enter a descriptive name for the discount for example, 'Black Friday Sale'.
 
-Black Friday - Cyber Monday discounts can be either **one time discounts** or **recurring discounts**. 
+Black Friday - Cyber Monday discounts can be either **one-time discounts** or **recurring discounts**. 
 
-To create a one time Black friday - Cyber Monday Discount, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-one-time-discount "guide") on how to create a one time discount.
+To create a one-time Black Friday - Cyber Monday Discount, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-one-time-discount "guide") on how to create a one-time discount.
 
-To create a recurring Black friday - Cyber Monday Discount, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-recurring-discount "guide") on how to create a recurring discount.
+To create a recurring Black Friday - Cyber Monday Discount, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-recurring-discount "guide") on how to create a recurring discount.
 
 ### Usage and expiry limits on Discount and Promotions
 
-Since Black Friday - Cyber Monday discounts are time limited discounts as they last for only the duration of this period, you will need to set a limit on discounts offered within this period.
+Since Black Friday - Cyber Monday discounts are time-limited discounts as they last for only the duration of this period, you will need to set a limit on discounts offered within this period.
 
 To set a time limit to discounts created within Black Friday - Cyber Monday, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-limited-time-discount "guide")
 
@@ -54,25 +54,24 @@ If you would like to find out how many times a discount has been redeemed, check
 
 This example creates a new Black Friday discount which:
 
-- Takes $30 off a transaction.
+- Takes 5% off a transaction.
 - Does not recur.
-- Only applies to two price IDs.
-- Can't be applied by customers using a code
-- Doesn't expire.
-- Has no limit on the number of times it can be applied
+- Can be applied using the code `BFCM24`.
+- Expires on December 5, 2024, at 00:00 UTC.
+- Is applied to all products.
+- Is enabled for checkout.
+- Has a limit to the amount of times it can be used.
 
 ```
 {
-  "description": "Nonprofit discount",
-  "type": "flat",
-  "amount": "1000",
+  "description": "Black Friday Sale",
   "currency_code": "USD",
-  "recur": true,
+  "type": "percentage",
+  "amount": "5",
+  "recur": false,
   "maximum_recurring_intervals": null,
-  "restrict_to": [
-    "pri_01gsz8z1q1n00f12qt82y31smh",
-    "pri_01gsz8s48pyr4mbhvv2xfggesg"
-  ]
+   "enabled_for_checkout": true,
+   "expires_at": "2024-12-05T00:00:00Z"
 }
 ```
 #### RESPONSE 
@@ -83,24 +82,23 @@ If successful, Paddle will respond with a copy of the newly created discount ent
 {
   "data": {
     "id": "dsc_01gtf15svsqzgp9325ss4ebmwt",
-    "description": "Nonprofit discount",
+    "description": "Black Friday Sale",
     "status": "active",
-    "enabled_for_checkout": false,
-    "code": null,
-    "type": "flat",
+    "enabled_for_checkout": true,
+    "code": "BFCM24",
+    "type": "percentage",
     "amount": "1000",
     "currency_code": "USD",
-    "recur": true,
+	"status": "active",
+	 "recur": false,
     "maximum_recurring_intervals": null,
-    "usage_limit": null,
-    "restrict_to": [
-      "pri_01gsz8z1q1n00f12qt82y31smh",
-      "pri_01gsz8s48pyr4mbhvv2xfggesg"
-    ],
-    "expires_at": null,
+    "expires_at": 2024-12-05T00:00:00Z,
     "times_used": 0,
-    "created_at": "2023-03-01T16:48:04.473Z",
-    "updated_at": "2023-03-02T08:31:19.035Z"
+	"usage_limit": 80,
+    "restrict_to": null,
+    "expires_at": null,
+    "created_at": "2024-11-026T16:48:04.473Z",
+    "updated_at": "2024-11-026T08:31:19.035Z"
   }
 }
 ```
