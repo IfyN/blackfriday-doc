@@ -10,7 +10,7 @@ Start by logging into your Paddle Dashboard. If you do not have a Paddle account
 **Navigate** to Discounts
 In the Paddle Dashboard, navigate to the **Discounts** section under the **Catalog** option.
 
-#### Create a New Discount
+### Create a New Discount
 To create a new discount, select **+ New Discount**
 
 Select the **discount type**.
@@ -27,24 +27,24 @@ To create a one time Black friday - Cyber Monday Discount, check this [guide](ht
 
 To create a recurring Black friday - Cyber Monday Discount, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-recurring-discount "guide") on how to create a recurring discount.
 
-#### Usage and expiry limits on Discount and Promotions
+### Usage and expiry limits on Discount and Promotions
 
 Since Black Friday - Cyber Monday discounts are time limited discounts as they last for only the duration of this period, you will need to set a limit on discounts offered within this period.
 
 To set a time limit to discounts created within Black Friday - Cyber Monday, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#create-a-limited-time-discount "guide")
 
-#### Checkout discount code 
+### Checkout discount code 
 
 Set the **Checkout discount code** toggle on.
 Set a discount code or select the **Generate random code** option.
 
-#### Add discounts to selected products
+### Add discounts to selected products
 
 If you would like to add discounts to only selected products within your catalog, check this [guide](https://developer.paddle.com/build/products/offer-discounts-promotions-coupons#limit-discounts-to-certain-products "guide")
 
 When you are done you should select the **create** button, this creates a new discount.
 
-#### Find out how many times a discount has been redeemed
+### Find out how many times a discount has been redeemed
 
 You might want to check how many times the Black Friday - Cyber Monday discount has been used, this can help you keep track of how many customers purchased your product or know what products were popular during this period, you can also use this information to generate traffic to a specific product.
 
